@@ -22,7 +22,7 @@ const Footer = () => {
     return (
         <>
             <footer className=" w-screen max-w-7xl mx-auto px-4 sm:px-6">
-                <div className="py-6 px-4 md:flex md:items-center md:justify-between w-full text-gray-500 ">
+                <div className="py-6 px-4 md:flex md:items-center md:justify-between w-full text-base ">
                     <span className=" hidden sm:block">© 2022 Gilly Huga Anargya. All Rights Reserved.
                     </span>
                     <ul className='flex items-center justify-center'>
@@ -31,7 +31,7 @@ const Footer = () => {
                                 const Icon = item.icon;
                                 return (
                                     <Link key={item.title} href={item.url}>
-                                        <a target="_blank" rel='noreferrer' className='mx-4 flex items-center text-gray-500 hover:text-gray-900'>
+                                        <a target="_blank" rel='noreferrer' className='mx-4 flex items-centert text-base hover:text-gray-900'>
                                         <Icon className="h-6 w-6"/>
                                             <span className='ml-2 hidden sm:block'>
                                                 {item.title}

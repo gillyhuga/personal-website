@@ -12,12 +12,18 @@
     "@headlessui/react": "^1.6.6",
     "date-fns": "^2.29.1",
     "gray-matter": "^4.0.3",
+    "mdx-prism": "^0.3.4",
     "next": "12.2.3",
+    "next-mdx-remote": "^4.1.0",
     "next-themes": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
-    "react-rough-notation": "^1.0.3"
+    "react-rough-notation": "^1.0.3",
+    "rehype": "^12.0.1",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.0.1",
+    "remark-code-titles": "^0.1.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
@@ -27,8 +33,8 @@
     "autoprefixer": "^10.4.8",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.7",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.7.4"
   }
 }

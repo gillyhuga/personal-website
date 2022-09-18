@@ -59,7 +59,12 @@ const Navbar = ({ router }) => {
                     </div>
                     <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-4">
                         {menu.map((item) => (
-                            <a key={item.name} href={item.href} className={"rounded-lg px-3 py-2 text-base dark:text-white  font-medium hover:bg-opacity-50 hover:bg-white hover:text-primary" + `${router.pathname == item.href ? 'text-primary dark:text-white underline underline-offset-[6px]  decoration-[3px] decoration-primary' : ''}`}>{item.name}</a>
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                            >
+                                <a className={"rounded-lg px-3 py-2 text-base dark:text-white  font-medium hover:bg-opacity-50 hover:bg-white hover:text-primary" + `${router.pathname == item.href ? 'text-primary dark:text-white underline underline-offset-[6px]  decoration-[3px] decoration-primary' : ''}`}>{item.name}</a>
+                            </Link>
                         ))}
                         <ThemeChanger />
                     </div>

@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import Link from "next/link";
-
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { BiHomeAlt, BiGlobe, BiBookAlt, BiUser } from 'react-icons/bi';
 import logo from '@/public/images/website-icon.png';

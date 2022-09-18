@@ -58,17 +58,9 @@ const Navbar = ({ router }) => {
                             <HiOutlineDotsHorizontal className="h-6 w-6" aria-hidden="true" />
                         </Popover.Button>
                     </div>
-                    <div className="hidden md:flex dark:text-white items-center justify-end md:flex-1 lg:w-0">
+                    <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-4">
                         {menu.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-
-                            >
-                                <a className={"transition-all inline-block px-5 py-2 rounded-md font-semibold hover:bg-opacity-50 hover:text-primary " + `${router.pathname == item.href ? 'text-primary dark:text-white underline underline-offset-4 decoration-2 decoration-primary' : ''}`}>
-                                    {item.name}
-                                </a>
-                            </Link>
+                            <a key={item.name} href={item.href} className={"rounded-lg px-3 py-2 text-base dark:text-white  font-medium hover:bg-opacity-50 hover:bg-white hover:text-primary" + `${router.pathname == item.href ? 'text-primary dark:text-white underline underline-offset-[6px]  decoration-[3px] decoration-primary' : ''}`}>{item.name}</a>
                         ))}
                         <ThemeChanger />
                     </div>
@@ -84,7 +76,7 @@ const Navbar = ({ router }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-                <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+                <Popover.Panel className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
                     <div className="rounded-lg shadow-lg bg-white dark:bg-gray-900 divide-y-2 divide-gray-50">
                         <div className="pt-5 pb-6 px-5">
                             <div className="flex items-center justify-between">
@@ -114,7 +106,6 @@ const Navbar = ({ router }) => {
                                                 <item.icon className="flex-shrink-0 h-6 w-6 text-primary" aria-hidden="true" />
                                                 <span className="ml-3 text-base font-medium dark:text-white">{item.name}</span>
                                             </a>
-
                                         </Link>
                                     ))}
                                 </nav>

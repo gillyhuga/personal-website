@@ -19,7 +19,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
         <div className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 h-60 blur-2xl opacity-30 -mt-40  absolute w-full top-0 z-10"></div>
         <header>
           <NavigationBar />
-        </header>
+        </header>                                                                                               
         <div className="w-screen my-auto max-w-7xl mx-auto px-4 sm:px-6">
           <main>
             {children}

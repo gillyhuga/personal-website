@@ -1,20 +1,16 @@
 import { Fragment } from 'react'
+import dynamic from "next/dynamic";
 import { Popover, Transition } from '@headlessui/react'
 import Link from "next/link";
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { BiHomeAlt, BiGlobe, BiBookAlt, BiUser } from 'react-icons/bi';
 import logo from '@/public/images/website-icon.png';
 import Image from 'next/image'
-import ThemeChanger from '@/components/common/ThemeSwitch';
 import { withRouter } from 'next/router';
 
+const ThemeChanger = dynamic(() => import("@/components/common/ThemeSwitch"), { ssr: false });
+
 const menu = [
-    {
-        name: 'Home',
-        description: 'Welcome Home.',
-        href: '/',
-        icon: BiHomeAlt,
-    },
     {
         name: 'Portfolio',
         description: 'Works.',
@@ -63,7 +59,7 @@ const Navbar = ({ router }) => {
                                 key={item.name}
                                 href={item.href}
                             >
-                                <a className={"rounded-lg px-3 py-2 text-base dark:text-white  font-medium hover:bg-opacity-50 hover:bg-white hover:text-primary" + `${router.pathname == item.href ? 'text-primary dark:text-white underline underline-offset-[6px]  decoration-[3px] decoration-primary' : ''}`}>{item.name}</a>
+                                <a className={"rounded-lg px-3 py-2 text-base dark:text-white  font-medium hover:bg-opacity-50 hover:bg-white hover:text-primary" + `${router.asPath.match(item.href) ? 'text-primary dark:text-white underline underline-offset-[6px]  decoration-[3px] decoration-primary' : ''}`}>{item.name}</a>
                             </Link>
                         ))}
                         <ThemeChanger />
@@ -106,7 +102,7 @@ const Navbar = ({ router }) => {
                                             key={item.name}
                                             href={item.href}
                                         >
-                                            <a className={"p-3 flex items-center rounded-md bg-white dark:bg-gray-900 hover:bg-gray-100 hover:dark:bg-gray-800" + `${router.pathname == item.href ? ' bg-gray-100 dark:bg-gray-800' : ''}`}>
+                                            <a className={"p-3 flex items-center rounded-md bg-white dark:bg-gray-900 hover:bg-gray-100 hover:dark:bg-gray-800" + `${router.asPath.match(item.href) ? ' bg-gray-100 dark:bg-gray-800' : ''}`}>
                                                 <item.icon className="flex-shrink-0 h-6 w-6 text-primary" aria-hidden="true" />
                                                 <span className="ml-3 text-base font-medium dark:text-white">{item.name}</span>
                                             </a>

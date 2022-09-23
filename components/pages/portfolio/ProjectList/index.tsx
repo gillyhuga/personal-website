@@ -32,7 +32,7 @@ function Projects({ offset, selectedTag }: ProjectsProps) {
                 <li key={id} className="flex flex-col-reverse sm:flex-row justify-between gap-4 ">
                     <div className="w-full flex-1 max-w-[450px] sm:flex sm:flex-col sm:justify-between sm:items-start">
                         <div>
-                            <a
+                            <a                                                                                                                                                                                                                                                                  
                                 href={url}
                                 className="text-2xl sm:text-3xl md:text-4xl font-display text-black-100 mb-4 inline-block underline hover:no-underline underline-offset-1"
                                 title={`Open ${name} in new tab`}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { RoughNotation } from "react-rough-notation";
 
 export const Portfolio = (): JSX.Element => {
-  const tags = ["React", "Next.js", "TailwindCSS"]
+  const tags = ["React", "TailwindCSS", "Bootstrap"]
   const [selectedTag, setSelectedTag] = useState<string>("");
   const handleTagClick = (tag: string) => {
     if (selectedTag === tag) {

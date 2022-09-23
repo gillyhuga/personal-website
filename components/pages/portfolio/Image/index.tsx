@@ -15,13 +15,13 @@ function Image({
     return (
         <div className={`relative overflow-hidden ${className || ""}`}>
             <NextImage
-                src={src}
+                src={src ? src : "/images/no-thumbnail.png"}
                 alt={alt}
                 layout="fill"
                 blurDataURL={src}
-                loading="lazy"
                 placeholder="empty"
                 className="object-cover w-full h-full"
+                priority
             />
         </div>
     );

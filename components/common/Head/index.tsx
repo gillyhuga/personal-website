@@ -8,9 +8,9 @@ export const WEBSITE_HOST_URL = 'https://gillyhuga.xyz';
 const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
     const router = useRouter();
     const meta: MetaProps = {
-        title: 'Gilly Huga Anargya | Personal Website',
-        description:'Personal website of Gilly Huga Anargya. A passionate software engineer that focused on the front-end development.',
-        image: `${WEBSITE_HOST_URL}/images/website-icon.png`,
+        title: 'Gilly Huga Anargya | Frontend Engineer',
+        description:'The personal site, writing and portfolio of Gilly Huga Anargya, a frontend engineer based in Indonesia.',
+        image: `${WEBSITE_HOST_URL}/images/meta-image.png`,
         type: 'website',
         ...customMeta,
     };

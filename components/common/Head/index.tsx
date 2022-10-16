@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { MetaProps } from '@/types/layout';
 
-export const WEBSITE_HOST_URL = 'https://gillyhuga.xyz';
+export const WEBSITE_HOST_URL = 'https://gillyhuga.com';
 
 const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
     const router = useRouter();

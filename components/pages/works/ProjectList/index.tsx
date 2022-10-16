@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { AiOutlineLink } from "react-icons/ai";
-import { PROJECT as dataProjects } from "@/components/pages/portfolio/ProjectList/constants";
-import Image from "@/components/pages/portfolio/Image";
+import { PROJECT as dataProjects } from "@/components/pages/works/ProjectList/constants";
+import Image from "@/components/pages/works/Image";
 
 type ProjectType = typeof dataProjects[0];
 

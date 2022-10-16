@@ -12,9 +12,9 @@ const ThemeChanger = dynamic(() => import("@/components/common/ThemeSwitch"), { 
 
 const menu = [
     {
-        name: 'Portfolio',
+        name: 'Works',
         description: 'Works.',
-        href: '/portfolio',
+        href: '/works',
         icon: BiGlobe,
     },
     {

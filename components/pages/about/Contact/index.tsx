@@ -11,7 +11,7 @@ const Contact = () => {
                     Want to talk about technology related project or just drink something tasty together?
                 </p>
                 <p className="pt-5">
-                    If yes, please don&apos;t be shy and just reach me at <a className='underline hover:no-underline font-semibold' href='mailto:gilly.huga@yahoo.co.id'>gilly.huga@yahoo.co.id</a>. Anyway, thanks for visiting my profile :)
+                    If yes, please don&apos;t be shy and just reach me at <a className='underline hover:no-underline font-semibold' href='mailto:hi@gillyhuga.com'>hi@gillyhuga.com</a>. Anyway, thanks for visiting my profile :)
                 </p>
             </div>
         </>

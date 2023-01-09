@@ -31,7 +31,7 @@ const menu = [
     },
 ]
 
-const Navbar = ({ router }) => {
+const Navbar = ({ router }:any) => {
     return (
         <Popover className="fixed inset-x-0 top-0 flex flex-row z-10 justify-between bg-clip-padding backdrop-filter bg-opacity-30 border-b dark:border-transparent backdrop-blur-md">
             <div className="w-screen max-w-7xl mx-auto px-4 sm:px-6">

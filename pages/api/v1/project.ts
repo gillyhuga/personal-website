@@ -11,11 +11,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       try {
         const result = await prisma.portfolio.findMany({});
         res.status(200).json(result);
-        res.end();
       } catch (error) {
         if (error instanceof Error) res.status(422).json({ message: error.message });
-        res.end();
       }
+      break
     case "POST":
       try {
         const result = await prisma.portfolio.create({
@@ -28,11 +27,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           },
         })
         res.status(200).json({ message: "success" });
-        res.end();
       } catch (error) {
         if (error instanceof Error) res.status(422).json({ message: error.message });
-        res.end();
       }
+      break
     default:
       return res.status(400).json({ msg: "This method is not supported" });
   }

@@ -1,19 +1,32 @@
 import Layout from "@/components/layout/BaseLayout";
 import ProjectList from "@/components/pages/works/ProjectList";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { RoughNotation } from "react-rough-notation";
 
 export const Portfolio = (): JSX.Element => {
   const tags = ["React", "TailwindCSS", "Bootstrap"]
   const [selectedTag, setSelectedTag] = useState<string>("");
+  const [projects, setProjects] = useState<any>([])
+
   const handleTagClick = (tag: string) => {
     if (selectedTag === tag) {
       return setSelectedTag("");
     }
-
     return setSelectedTag(tag);
   };
 
+  const getProject = async () => {
+    const response = await axios.get("/api/v1/project")
+    return response
+  }
+
+  useEffect(() => {
+    getProject()
+      .then((res) => {
+        setProjects(res.data)
+      })
+  }, [])
 
   return (
     <Layout>
@@ -44,7 +57,7 @@ export const Portfolio = (): JSX.Element => {
             </ul>
           </div>
         </div>
-        <ProjectList selectedTag={selectedTag} />
+        <ProjectList selectedTag={selectedTag} dataProjects={projects} />
       </div>
     </Layout>
   );

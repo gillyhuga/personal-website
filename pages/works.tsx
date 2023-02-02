@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/BaseLayout";
 import ProjectList from "@/components/pages/works/ProjectList";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RoughNotation } from "react-rough-notation";
 
 export async function getServerSideProps() {

@@ -23,7 +23,7 @@ const Footer = () => {
         <>
             <footer className="flex w-screen max-w-7xl mx-auto px-4 sm:px-6 ">
                 <div className="py-6 px-4 md:flex md:items-center md:justify-between w-full text-base dark:text-white ">
-                    <span className=" hidden sm:block">© 2022 Gilly Huga Anargya. All Rights Reserved.
+                    <span className=" hidden sm:block">© 2023 Gilly Huga Anargya. All Rights Reserved.
                     </span>
                     <ul className='flex items-center justify-center'>
                         {

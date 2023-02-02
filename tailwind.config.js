@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
+const defaultTheme = require('tailwindcss/defaultTheme')
 const { spacing } = require('tailwindcss/defaultTheme');
+
 
 module.exports = {
   mode: 'jit',
@@ -11,6 +13,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        '9xl': '7rem',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

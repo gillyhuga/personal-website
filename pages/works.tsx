@@ -4,10 +4,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { RoughNotation } from "react-rough-notation";
 
-export const Portfolio = (): JSX.Element => {
+export async function getServerSideProps() {
+  const res = await axios.get("https://api.gillyhuga.com/api/v1/projects")
+  const { data } = res.data
+
+  return { props: { data } }
+}
+
+
+const Portfolio = ({ data }) => {
   const tags = ["React", "TailwindCSS", "Bootstrap"]
   const [selectedTag, setSelectedTag] = useState<string>("");
-  const [projects, setProjects] = useState<any>([])
 
   const handleTagClick = (tag: string) => {
     if (selectedTag === tag) {
@@ -15,18 +22,6 @@ export const Portfolio = (): JSX.Element => {
     }
     return setSelectedTag(tag);
   };
-
-  const getProject = async () => {
-    const response = await axios.get("/api/v1/project")
-    return response
-  }
-
-  useEffect(() => {
-    getProject()
-      .then((res) => {
-        setProjects(res.data)
-      })
-  }, [])
 
   return (
     <Layout>
@@ -57,7 +52,7 @@ export const Portfolio = (): JSX.Element => {
             </ul>
           </div>
         </div>
-        <ProjectList selectedTag={selectedTag} dataProjects={projects} />
+        <ProjectList selectedTag={selectedTag} dataProjects={data} />
       </div>
     </Layout>
   );

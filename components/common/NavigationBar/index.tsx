@@ -31,9 +31,9 @@ const menu = [
     },
 ]
 
-const Navbar = ({ router }:any) => {
+const Navbar = ({ router }: any) => {
     return (
-        <Popover className="fixed inset-x-0 top-0 flex flex-row z-10 justify-between bg-clip-padding backdrop-filter bg-opacity-30 border-b dark:border-transparent backdrop-blur-md">
+        <Popover className="fixed inset-x-0 top-0 flex flex-row z-50 justify-between bg-clip-padding backdrop-filter bg-opacity-30 border-b dark:border-transparent backdrop-blur-md">
             <div className="w-screen max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="flex justify-between items-center py-3 md:justify-start md:space-x-10">
                     <div className="flex justify-start lg:w-0 lg:flex-1">

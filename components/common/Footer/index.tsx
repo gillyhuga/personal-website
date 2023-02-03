@@ -30,13 +30,11 @@ const Footer = () => {
                             social.map((item) => {
                                 const Icon = item.icon;
                                 return (
-                                    <Link key={item.title} href={item.url}>
-                                        <a target="_blank" rel='noreferrer' className='mx-4 flex items-centert  hover:text-gray-900'>
+                                    <Link key={item.title} href={item.url} target="_blank" rel='noreferrer' className='mx-4 flex items-centert  hover:text-gray-900'>
                                         <Icon className="h-6 w-6"/>
                                             <span className='ml-2 hidden sm:block'>
                                                 {item.title}
                                             </span>
-                                        </a>
                                     </Link>
                                 )
                             })

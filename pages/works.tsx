@@ -1,20 +1,16 @@
+import Loader from "@/components/common/Loader";
 import Layout from "@/components/layout/BaseLayout";
 import ProjectList from "@/components/pages/works/ProjectList";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RoughNotation } from "react-rough-notation";
+import toast from 'react-hot-toast';
 
-export async function getServerSideProps() {
-  const res = await axios.get("https://api.gillyhuga.com/api/v1/projects")
-  const { data } = res.data
-
-  return { props: { data } }
-}
-
-
-const Portfolio = ({ data }) => {
+const Portfolio = () => {
   const tags = ["React", "TailwindCSS", "Bootstrap"]
   const [selectedTag, setSelectedTag] = useState<string>("");
+  const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const handleTagClick = (tag: string) => {
     if (selectedTag === tag) {
@@ -22,6 +18,20 @@ const Portfolio = ({ data }) => {
     }
     return setSelectedTag(tag);
   };
+
+  const getData = async () => {
+    await axios.get("https://api.gillyhuga.com/api/v1/projects")
+      .then((response) => {
+        setProjects(response.data.data)
+        setLoading(false)
+      }).catch((error) => {
+        toast.error(error.message)
+      })
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   return (
     <Layout>
@@ -52,7 +62,8 @@ const Portfolio = ({ data }) => {
             </ul>
           </div>
         </div>
-        <ProjectList selectedTag={selectedTag} dataProjects={data} />
+        <Loader visible={loading} />
+        {projects && <ProjectList selectedTag={selectedTag} dataProjects={projects} />}
       </div>
     </Layout>
   );

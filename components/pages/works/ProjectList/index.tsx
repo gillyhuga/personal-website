@@ -55,11 +55,11 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                         </div>
 
                         <div id="tags" className="flex items-center flex-wrap gap-2">
-                            {tags && tags.map((tag) => {
+                            {tags && tags.map((tag, idx) => {
                                 const isSelected = selectedTag && selectedTag.toLowerCase() === tag.toLowerCase();
 
                                 return (
-                                    <span key={tag} className={`py-2 px-4 select-none rounded bg-primary/5 text-sm font-medium ${isSelected ? "active" : ""}`}>
+                                    <span key={idx} className={`py-2 px-4 select-none rounded bg-primary/5 text-sm font-medium ${isSelected ? "active" : ""}`}>
                                         {tag}
                                     </span>
                                 );

@@ -8,6 +8,7 @@ export default function Page404() {
         <Layout>
             <div className="whitespace-pre-line text-center sm:mx-0 font-bold " >
                 <Image
+                    className="mx-auto"
                     src={Image404}
                     priority
                     alt="Error 404"

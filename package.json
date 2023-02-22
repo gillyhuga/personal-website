@@ -27,6 +27,7 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.4.0",
     "react-loader-spinner": "^5.3.4",
+    "react-loading-skeleton": "^3.1.1",
     "react-rough-notation": "^1.0.3",
     "rehype": "^12.0.1",
     "rehype-autolink-headings": "^6.1.1",

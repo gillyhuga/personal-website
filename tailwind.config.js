@@ -13,6 +13,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        shimmer: {
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
+      },
       fontFamily: {
         'sans': ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
       },

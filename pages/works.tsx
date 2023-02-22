@@ -1,10 +1,10 @@
-import Loader from "@/components/common/Loader";
 import Layout from "@/components/layout/BaseLayout";
 import ProjectList from "@/components/pages/works/ProjectList";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { RoughNotation } from "react-rough-notation";
 import toast from 'react-hot-toast';
+import Skeleton from "@/components/pages/works/SkeletonList";
 
 const Portfolio = () => {
   const tags = ["React", "TailwindCSS", "Bootstrap"]
@@ -62,7 +62,7 @@ const Portfolio = () => {
             </ul>
           </div>
         </div>
-        <Loader visible={loading} />
+        <Skeleton visible={loading}/>
         {projects && <ProjectList selectedTag={selectedTag} dataProjects={projects} />}
       </div>
     </Layout>

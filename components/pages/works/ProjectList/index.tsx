@@ -19,6 +19,7 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
     };
 
     return (
+
         <ul className="flex flex-col gap-8 sm:gap-10">
             {fileteredProjects().map(({
                 id,
@@ -88,6 +89,8 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                 </li>
             ))}
         </ul>
+
+
     );
 }
 

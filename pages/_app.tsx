@@ -6,6 +6,7 @@ import NavigationBar from '@/components/common/NavigationBar';
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import Router from "next/router";
+import { Toaster } from 'react-hot-toast';
 
 NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', () => NProgress.start()); 
@@ -17,6 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
     <ThemeProvider attribute="class" enableSystem={false} defaultTheme="light">
       <div className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 h-60 blur-2xl opacity-30 -mt-40  absolute w-full top-0 z-10"></div>
       <NavigationBar />
+      <div><Toaster/></div>
       <Component {...pageProps} />
     </ThemeProvider>
   );

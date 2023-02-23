@@ -1,19 +1,37 @@
 import Layout from "@/components/layout/BaseLayout";
 import ProjectList from "@/components/pages/works/ProjectList";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { RoughNotation } from "react-rough-notation";
+import toast from 'react-hot-toast';
+import Skeleton from "@/components/pages/works/SkeletonList";
 
-export const Portfolio = (): JSX.Element => {
+const Portfolio = () => {
   const tags = ["React", "TailwindCSS", "Bootstrap"]
   const [selectedTag, setSelectedTag] = useState<string>("");
+  const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
+
   const handleTagClick = (tag: string) => {
     if (selectedTag === tag) {
       return setSelectedTag("");
     }
-
     return setSelectedTag(tag);
   };
 
+  const getData = async () => {
+    await axios.get("https://api.gillyhuga.com/api/v1/projects")
+      .then((response) => {
+        setProjects(response.data.data)
+        setLoading(false)
+      }).catch((error) => {
+        toast.error(error.message)
+      })
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   return (
     <Layout>
@@ -44,7 +62,8 @@ export const Portfolio = (): JSX.Element => {
             </ul>
           </div>
         </div>
-        <ProjectList selectedTag={selectedTag} />
+        <Skeleton visible={loading}/>
+        {projects && <ProjectList selectedTag={selectedTag} dataProjects={projects} />}
       </div>
     </Layout>
   );

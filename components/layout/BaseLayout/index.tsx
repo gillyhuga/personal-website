@@ -1,7 +1,6 @@
 import React from 'react';
 import { MetaProps } from '@/types/layout';
 import Head from '@/components/common/Head';
-import NavigationBar from '@/components/common/NavigationBar';
 import Footer from '@/components/common/Footer';
 
 type LayoutProps = {

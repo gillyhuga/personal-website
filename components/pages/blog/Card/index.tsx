@@ -6,7 +6,7 @@ const BlogCard = ({ body, slug }: BlogType): JSX.Element => {
     const { title, date, image, description } = body;
 
     return (
-        <Link href={`/blog/` + slug}>
+        <Link legacyBehavior href={`/blog/` + slug}>
             <a className="w-full transform duration-300 border-gray-200 dark:border-gray-200 shadow-md overflow-hidden rounded-2xl hover:-translate-y-1 active:translate-y-0 active:scale-95">
                 <div className="flex flex-col h-full p-4 dark:bg-sky-500/5 bg-grey/10">
                     <div className="flex rounded-lg overflow-hidden relative mb-3">
@@ -17,13 +17,11 @@ const BlogCard = ({ body, slug }: BlogType): JSX.Element => {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-full">
+                        <div className="w-full h-[200px]">
                             <Image
                                 src={image ? image : "/images/no-thumbnail.png"}
                                 alt={title}
-                                width="712"
-                                height="360"
-                                layout="responsive"
+                                fill
                                 placeholder="blur"
                                 blurDataURL={image ? image : "/images/no-thumbnail.png"}
                                 priority

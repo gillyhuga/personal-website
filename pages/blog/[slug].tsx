@@ -36,7 +36,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         date: frontMatter.date,
         type: 'article',
     };
-    console.log(customMeta);
+  
     return (
         <Layout customMeta={customMeta} >
             <div className="min-h-[calc(100vh-5rem)]">

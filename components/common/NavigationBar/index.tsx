@@ -31,21 +31,19 @@ const menu = [
     },
 ]
 
-const Navbar = ({ router }) => {
+const Navbar = ({ router }: any) => {
     return (
-        <Popover className="fixed inset-x-0 top-0 flex flex-row z-10 justify-between bg-clip-padding backdrop-filter bg-opacity-30 border-b dark:border-transparent backdrop-blur-md">
+        <Popover className="fixed inset-x-0 top-0 flex flex-row z-50 justify-between bg-clip-padding backdrop-filter bg-opacity-30 border-b dark:border-transparent backdrop-blur-md">
             <div className="w-screen max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="flex justify-between items-center py-3 md:justify-start md:space-x-10">
                     <div className="flex justify-start lg:w-0 lg:flex-1">
-                        <Link href="/">
-                            <a className="h-8 w-auto sm:h-10">
+                        <Link href="/" className="h-8 w-auto sm:h-10">
                                 <Image
                                     src={logo}
                                     alt="Gilly"
                                     width={40}
                                     height={40}
                                 />
-                            </a>
                         </Link>
                     </div>
                     <div className="-mr-2 -my-2 md:hidden">
@@ -55,7 +53,7 @@ const Navbar = ({ router }) => {
                     </div>
                     <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-4">
                         {menu.map((item) => (
-                            <Link
+                            <Link legacyBehavior
                                 key={item.name}
                                 href={item.href}
                             >
@@ -98,7 +96,7 @@ const Navbar = ({ router }) => {
                             <div className="mt-6">
                                 <nav className="grid gap-y-2">
                                     {menu.map((item) => (
-                                        <Link
+                                        <Link legacyBehavior
                                             key={item.name}
                                             href={item.href}
                                         >

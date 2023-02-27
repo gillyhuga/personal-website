@@ -39,7 +39,7 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                             >
                                 {name}
                             </a>
-                            <p className="line-clamp-3">
+                            <p className="text-left line-clamp-3">
                                 {description}
                             </p>
                             <a
@@ -68,11 +68,11 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                         </div>
                     </div>
 
-                    <div className="w-full flex-1 sm:max-w-[350px] mb-4 sm:mb-0 rounded overflow-hidden relative group">
-                        <div className="absolute z-10 w-full h-full p-4 bg-black text-white bg-opacity-50 flex items-center justify-center test-center opacity-0 invisible group-hover:opacity-100 group-hover:visible tranistion-all duration-300 ease-in-out">
+                    <div className="w-full flex-1 sm:max-w-[350px] mb-4 sm:mb-0 rounded-lg overflow-hidden relative group">
+                        <div className="absolute z-10 w-full h-full p-4 bg-black text-white  bg-opacity-50 flex items-center justify-center test-center opacity-0 invisible group-hover:opacity-100 group-hover:visible tranistion-all duration-300 ease-in-out">
                             <a
                                 href={url}
-                                className="text-white text-xl font-semibold underline hover:no-underline underline-offset-1"
+                                className="text-white text-xl text-center font-semibold underline hover:no-underline underline-offset-1"
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 title={`Open ${name} in new tab`}
@@ -83,7 +83,7 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                         <Image
                             alt={name}
                             src={image}
-                            className="w-full h-52 sm:w-[350px] sm:h-[350px] rounded"
+                            className="w-full h-52 sm:w-[350px] sm:h-[350px]"
                         />
                     </div>
                 </li>

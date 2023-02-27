@@ -1,4 +1,7 @@
 const nextConfig = {
+  images: {
+    domains: ['i.imgur.com'],
+  },
   async redirects() {
     return [
       {

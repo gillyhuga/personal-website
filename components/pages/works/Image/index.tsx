@@ -17,8 +17,8 @@ function Image({
             <NextImage
                 src={src ? src : "/images/no-thumbnail.png"}
                 alt={alt}
-                layout="fill"
-                blurDataURL={src}
+                fill
+                blurDataURL={src ? src : "/images/no-thumbnail.png"}
                 placeholder="empty"
                 className="object-cover w-full h-full"
                 priority

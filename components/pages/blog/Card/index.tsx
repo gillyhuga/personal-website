@@ -21,8 +21,8 @@ const BlogCard = ({ body, slug }: BlogType): JSX.Element => {
                             <Image
                                 src={image ? image : "/images/no-thumbnail.png"}
                                 alt={title}
-                                fill
-                                placeholder="blur"
+                                height={400}
+                                width={400}
                                 blurDataURL={image ? image : "/images/no-thumbnail.png"}
                                 priority
                             />

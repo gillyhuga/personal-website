@@ -8,7 +8,7 @@ const BlogCard = ({ body, slug }: BlogType): JSX.Element => {
     return (
         <Link legacyBehavior href={`/blog/` + slug}>
             <a className="w-full transform duration-300 border-gray-200 dark:border-gray-200 shadow-md overflow-hidden rounded-2xl hover:-translate-y-1 active:translate-y-0 active:scale-95">
-                <div className="flex flex-col h-full p-4 dark:bg-sky-500/5 bg-grey/10">
+                <div className="flex flex-col h-full p-4 dark:bg-gray-900 bg-grey/10">
                     <div className="flex rounded-lg overflow-hidden relative mb-3">
                         <div className="absolute top-2 right-2 z-10">
                             <div className="flex items-center bg-gray-700/60 px-2 py-1 rounded-md">
@@ -31,7 +31,7 @@ const BlogCard = ({ body, slug }: BlogType): JSX.Element => {
                     <p className="text-2xl font-medium underline hover:no-underline underline-offset-1 dark:text-white">
                         {title}
                     </p>
-                    <p className="text-base text-justify mb-auto mt-1">
+                    <p className="text-base text-justify mb-auto mt-1 dark:prose-dark">
                         {description}
                     </p>
                 </div>

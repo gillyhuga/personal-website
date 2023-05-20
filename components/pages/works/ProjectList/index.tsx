@@ -39,12 +39,12 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                             >
                                 {name}
                             </a>
-                            <p className="text-left line-clamp-3">
+                            <p className="text-left line-clamp-3 text-base dark:prose-dark">
                                 {description}
                             </p>
                             <a
                                 href={url}
-                                className="bg-primary/5 rounded-full py-3 px-4 text-sm inline-block whitespace-nowrap my-2 w-full max-w-[335px] overflow-hidden text-ellipsis"
+                                className="bg-primary/5 dark:bg-gray-900 rounded-lg py-3 px-4 text-sm inline-block whitespace-nowrap my-2 w-full max-w-[335px] overflow-hidden text-ellipsis"
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 title={`Open ${name} in new tab`}
@@ -60,7 +60,7 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                                 const isSelected = selectedTag && selectedTag.toLowerCase() === tag.toLowerCase();
 
                                 return (
-                                    <span key={idx} className={`py-2 px-4 select-none rounded bg-primary/5 text-sm font-medium ${isSelected ? "active" : ""}`}>
+                                    <span key={idx} className={`py-2 px-4 select-none rounded-lg dark:bg-gray-900 bg-primary/5 text-sm font-medium ${isSelected ? "active" : ""}`}>
                                         {tag}
                                     </span>
                                 );
@@ -83,7 +83,7 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                         <Image
                             alt={name}
                             src={image}
-                            className="w-full h-52 sm:w-[350px] sm:h-[350px]"
+                            className="w-full h-52 sm:w-[350px] sm:h-[350px] "
                         />
                     </div>
                 </li>

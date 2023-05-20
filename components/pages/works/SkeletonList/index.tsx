@@ -27,7 +27,7 @@ const SkeletonCard = ({ visible }: SkeletonProps): JSX.Element => {
                                 <Skeleton height={35} width={90} />
                             </div>
                         </div>
-                        <div className="w-full flex-1 sm:max-w-[350px] mb-4 sm:mb-0 rounded overflow-hidden relative group">
+                        <div className="w-full flex-1 sm:max-w-[350px] mb-4 sm:mb-0 rounded-lg overflow-hidden relative group">
                             <Skeleton className="w-full h-52 sm:w-[350px] sm:h-[350px] rounded-lg bg-white " />
                         </div>
                     </li>

@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import Skeleton from "@/components/pages/works/SkeletonList";
 
 const Portfolio = () => {
-  const tags = ["React", "TailwindCSS", "Bootstrap"]
+  const tags = ["React JS", "Next JS", "Tailwind CSS", "Bootstrap", "Redux",]
   const [selectedTag, setSelectedTag] = useState<string>("");
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
@@ -41,7 +41,8 @@ const Portfolio = () => {
             <RoughNotation type="underline" show strokeWidth={2} color="#999999">Works</RoughNotation>
           </div>
           <p className="text-xl text-secondary py-5">
-            This is a list of projects I&apos;ve worked on. Feel free to check out my Github profile to see more projects I&apos;ve worked on.
+
+            This is a selection of my personal works. I&apos;ve included details about the project to showcase my skills, experience, and also why I created this project.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start gap-2 pb-6 ">
@@ -53,7 +54,7 @@ const Portfolio = () => {
               {tags.map((tag) => (
                 <li
                   key={tag}
-                  className={`bg-primary/5 select-none py-2 px-4 rounded-full text-sm font-medium border-[2px] ${selectedTag === tag ? "active border-base" : "border-transparent"}`}
+                  className={`bg-primary/5 dark:bg-gray-900 select-none py-2 px-4 rounded-lg text-sm font-medium border-[2px] ${selectedTag === tag ? "active border-secondary" : "border-transparent"}`}
                   onClick={() => handleTagClick(tag)}
                 >
                   {tag}
@@ -62,7 +63,7 @@ const Portfolio = () => {
             </ul>
           </div>
         </div>
-        <Skeleton visible={loading}/>
+        <Skeleton visible={loading} />
         {projects && <ProjectList selectedTag={selectedTag} dataProjects={projects} />}
       </div>
     </Layout>

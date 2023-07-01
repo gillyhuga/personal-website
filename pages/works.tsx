@@ -57,6 +57,7 @@ const Portfolio = () => {
                   className={`bg-primary/5 dark:bg-gray-900 select-none py-2 px-4 rounded-lg text-sm font-medium border-[2px] ${selectedTag === tag ? "active border-secondary" : "border-transparent"}`}
                   onClick={() => handleTagClick(tag)}
                 >
+
                   {tag}
                 </li>
               ))}

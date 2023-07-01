@@ -5,5 +5,5 @@ export type BlogType = {
         image?: string;
         title: string;
     };
-    slug: String;
+    slug: string;
 };

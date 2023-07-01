@@ -2,33 +2,35 @@ import React, { memo } from "react";
 import { AiOutlineLink } from "react-icons/ai";
 import Image from "@/components/pages/works/Image";
 
+interface Project {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    url: string;
+    tags?: string[];
+}
+
 interface ProjectsProps {
     offset?: number;
     selectedTag?: string;
-    dataProjects?: any;
+    dataProjects?: Project[];
 }
 
 function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
-    type ProjectType = typeof dataProjects[0];
-    const fileteredProjects = (): ProjectType[] => {
+    const filteredProjects = (): Project[] => {
         if (selectedTag) {
-            return dataProjects.filter(({ tags }) => tags?.includes(selectedTag)).slice(0, offset || dataProjects.length);
+            return dataProjects?.filter(({ tags }) =>
+                tags?.includes(selectedTag)
+            )?.slice(0, offset || dataProjects?.length);
         }
 
-        return dataProjects.slice(0, offset || dataProjects.length);
+        return dataProjects?.slice(0, offset || dataProjects?.length);
     };
 
     return (
-
         <ul className="flex flex-col gap-8 sm:gap-10">
-            {fileteredProjects().map(({
-                id,
-                name,
-                description,
-                image,
-                url,
-                tags,
-            }: ProjectType) => (
+            {filteredProjects()?.map(({ id, name, description, image, url, tags }) => (
                 <li key={id} className="flex flex-col-reverse sm:flex-row justify-between gap-4 ">
                     <div className="w-full flex-1 max-w-[450px] sm:flex sm:flex-col sm:justify-between sm:items-start">
                         <div>
@@ -56,7 +58,7 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                         </div>
 
                         <div id="tags" className="flex items-center flex-wrap gap-2">
-                            {tags && tags.map((tag, idx) => {
+                            {tags?.map((tag, idx) => {
                                 const isSelected = selectedTag && selectedTag.toLowerCase() === tag.toLowerCase();
 
                                 return (
@@ -69,7 +71,7 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                     </div>
 
                     <div className="w-full flex-1 sm:max-w-[350px] mb-4 sm:mb-0 rounded-lg overflow-hidden relative group">
-                        <div className="absolute z-10 w-full h-full p-4 bg-black text-white  bg-opacity-50 flex items-center justify-center test-center opacity-0 invisible group-hover:opacity-100 group-hover:visible tranistion-all duration-300 ease-in-out">
+                        <div className="absolute z-10 w-full h-full p-4 bg-black text-white bg-opacity-50 flex items-center justify-center test-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out">
                             <a
                                 href={url}
                                 className="text-white text-xl text-center font-semibold underline hover:no-underline underline-offset-1"
@@ -89,8 +91,6 @@ function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
                 </li>
             ))}
         </ul>
-
-
     );
 }
 

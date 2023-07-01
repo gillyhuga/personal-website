@@ -1,21 +1,7 @@
 import React, { memo } from "react";
 import { AiOutlineLink } from "react-icons/ai";
 import Image from "@/components/pages/works/Image";
-
-interface Project {
-    id: number;
-    name: string;
-    description: string;
-    image: string;
-    url: string;
-    tags?: string[];
-}
-
-interface ProjectsProps {
-    offset?: number;
-    selectedTag?: string;
-    dataProjects?: Project[];
-}
+import { Project, ProjectsProps } from "@/types/works";
 
 function Projects({ offset, selectedTag, dataProjects }: ProjectsProps) {
     const filteredProjects = (): Project[] => {

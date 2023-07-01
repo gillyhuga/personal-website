@@ -2,7 +2,7 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 module.exports = nextConfig = {
   images: {
-    domains: ['i.imgur.com'],
+    domains: ["res.cloudinary.com"],
   },
   async redirects() {
     return [

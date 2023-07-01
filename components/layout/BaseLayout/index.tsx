@@ -1,12 +1,7 @@
 import React from 'react';
-import { MetaProps } from '@/types/layout';
 import Head from '@/components/common/Head';
 import Footer from '@/components/common/Footer';
-
-type LayoutProps = {
-  children: React.ReactNode;
-  customMeta?: MetaProps;
-};
+import { LayoutProps } from '@/types/layout';
 
 export const WEBSITE_HOST_URL = 'https://gillyhuga.com';
 

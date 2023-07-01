@@ -1,3 +1,5 @@
+import { PostType } from './post';
+
 export type BlogType = {
     body: {
         date?: string;
@@ -6,4 +8,8 @@ export type BlogType = {
         title: string;
     };
     slug: string;
+};
+
+export type BlogProps = {
+    posts: PostType[];
 };

@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react';
+import { Fragment } from 'react';
 import dynamic from "next/dynamic";
 import { Popover, Transition } from '@headlessui/react';
 import Link from "next/link";
@@ -6,20 +6,10 @@ import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { BiGlobe, BiBookAlt, BiUser } from 'react-icons/bi';
 import logo from '@/public/images/website-icon.png';
 import Image from 'next/image';
-import { withRouter, NextRouter } from 'next/router';
+import { withRouter } from 'next/router';
+import { MenuItem, NavbarProps } from '@/types/navigation';
 
 const ThemeChanger = dynamic(() => import("@/components/common/ThemeSwitch"), { ssr: false });
-
-interface MenuItem {
-    name: string;
-    description: string;
-    href: string;
-    icon: ReactNode;
-}
-
-interface NavbarProps {
-    router: NextRouter;
-}
 
 const menu: MenuItem[] = [
     {

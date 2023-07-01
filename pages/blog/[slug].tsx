@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import mdxPrism from 'mdx-prism';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,9 +13,9 @@ import React from 'react';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import Layout, { WEBSITE_HOST_URL } from '@/components/layout/BaseLayout';
-import { MetaProps } from '../../types/layout';
-import { PostType } from '../../types/post';
-import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
+import { MetaProps } from '@/types/layout';
+import { PostPageProps } from '@/types/post';
+import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 
 const components = {
     Head,
@@ -23,10 +23,6 @@ const components = {
     Link,
 };
 
-type PostPageProps = {
-    source: MDXRemoteSerializeResult;
-    frontMatter: PostType;
-};
 
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
     const customMeta: MetaProps = {

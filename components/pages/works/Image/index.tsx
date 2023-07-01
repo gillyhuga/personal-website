@@ -1,11 +1,6 @@
 import React, { memo } from "react";
 import NextImage from "next/image";
-
-interface ImageProps {
-    src: string;
-    alt: string;
-    className?: string;
-}
+import {ImageProps} from "@/types/works";
 
 function Image({
     src,

@@ -2,14 +2,11 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
 import { POSTS_PATH } from '@/utils/mdxUtils';
+import {PostItems} from '@/types/post';
 
 export function getPostSlugs(): string[] {
   return fs.readdirSync(POSTS_PATH);
 }
-
-type PostItems = {
-  [key: string]: string;
-};
 
 export function getPostBySlug(slug: string, fields: string[] = []): PostItems {
   const realSlug = slug.replace(/\.mdx$/, '');

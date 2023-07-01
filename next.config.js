@@ -1,6 +1,8 @@
-const nextConfig = {
+const { withSentryConfig } = require("@sentry/nextjs");
+
+module.exports = nextConfig = {
   images: {
-    domains: ['i.imgur.com'],
+    domains: ["res.cloudinary.com"],
   },
   async redirects() {
     return [
@@ -16,4 +18,18 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+module.exports = withSentryConfig(
+  module.exports,
+  {
+    silent: true,
+    org: "giltech",
+    project: "personal-website",
+  },
+  {
+    widenClientFileUpload: true,
+    transpileClientSDK: true,
+    tunnelRoute: "/monitoring",
+    hideSourceMaps: true,
+    disableLogger: true,
+  }
+);

@@ -4,15 +4,10 @@ import { format, parseISO } from 'date-fns';
 import { GetStaticProps } from 'next';
 import { RoughNotation } from 'react-rough-notation';
 import { getAllPosts } from '@/lib/api';
-import { PostType } from '@/types/post';
+import { BlogProps } from '@/types/blog';
 import Layout from '@/components/layout/BaseLayout';
 
-type IndexProps = {
-    posts: PostType[];
-};
-
-
-export const Blog = ({ posts }: IndexProps): JSX.Element => {
+export const Blog = ({ posts }: BlogProps): JSX.Element => {
     return (
         <Layout>
             <div className="pt-28 pb-4 w-full min-h-[calc(100vh-5rem)] text-lg">

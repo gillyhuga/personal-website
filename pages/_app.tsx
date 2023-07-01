@@ -7,6 +7,7 @@ import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import Router from "next/router";
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/react';
 
 NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', () => NProgress.start()); 
@@ -20,6 +21,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <NavigationBar />
       <div><Toaster/></div>
       <Component {...pageProps} />
+      <Analytics />
     </ThemeProvider>
   );
 };

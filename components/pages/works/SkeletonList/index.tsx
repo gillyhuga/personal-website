@@ -11,8 +11,8 @@ const SkeletonCard = ({ visible }: SkeletonProps): JSX.Element => {
     return (
         <Theme>
             <ul className="flex flex-col gap-8 sm:gap-10">
-                {[...Array(2)].map((x) => (
-                    <li key={x} className={`${visible ? "flex" : "hidden"} flex-col-reverse sm:flex-row justify-between gap-4 `}>
+                {[...Array(2)].map((_, index) => (
+                    <li key={index} className={`${visible ? "flex" : "hidden"} flex-col-reverse sm:flex-row justify-between gap-4 `}>
                         <div className="w-full flex-1 max-w-[450px] sm:flex sm:flex-col sm:justify-between sm:items-start ">
                             <div className="w-[350px]">
                                 <Skeleton height={50} width={200} />
@@ -62,4 +62,3 @@ const Theme = ({ children }) => {
 };
 
 export default SkeletonCard;
-

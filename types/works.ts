@@ -1,8 +1,12 @@
+import { StaticImageData } from "next/image";
+
 export interface ImageProps {
-    src: string;
+    src: string ;
     alt: string;
     className?: string;
+    blurDataURL?: string | StaticImageData;
 }
+
 
 export interface Project {
     id: number;

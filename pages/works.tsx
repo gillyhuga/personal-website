@@ -1,37 +1,35 @@
-import Layout from "@/components/layout/BaseLayout";
-import ProjectList from "@/components/pages/works/ProjectList";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { RoughNotation } from "react-rough-notation";
 import toast from 'react-hot-toast';
+
+import Layout from "@/components/layout/BaseLayout";
+import ProjectList from "@/components/pages/works/ProjectList";
 import Skeleton from "@/components/pages/works/SkeletonList";
 
 const Portfolio = () => {
-  const tags = ["React JS", "Next JS", "Tailwind CSS", "Bootstrap", "Redux",]
+  const tags = ["React JS", "Next JS", "Tailwind CSS", "Bootstrap", "Redux"];
   const [selectedTag, setSelectedTag] = useState<string>("");
-  const [projects, setProjects] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleTagClick = (tag: string) => {
-    if (selectedTag === tag) {
-      return setSelectedTag("");
-    }
-    return setSelectedTag(tag);
+    setSelectedTag(selectedTag === tag ? "" : tag);
   };
 
   const getData = async () => {
-    await axios.get("https://api.gillyhuga.com/api/v1/projects")
-      .then((response) => {
-        setProjects(response.data.data)
-        setLoading(false)
-      }).catch((error) => {
-        toast.error(error.message)
-      })
-  }
+    try {
+      const response = await axios.get("https://api.gillyhuga.com/api/v1/projects");
+      setProjects(response.data.data);
+      setLoading(false);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   return (
     <Layout>
@@ -57,7 +55,6 @@ const Portfolio = () => {
                   className={`bg-primary/5 dark:bg-gray-900 select-none py-2 px-4 rounded-lg text-sm font-medium border-[2px] ${selectedTag === tag ? "active border-secondary" : "border-transparent"}`}
                   onClick={() => handleTagClick(tag)}
                 >
-
                   {tag}
                 </li>
               ))}

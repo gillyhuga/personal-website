@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import NextImage from "next/image";
-import {ImageProps} from "@/types/works";
+import { ImageProps } from "@/types/works";
 
 function Image({
     src,
@@ -10,11 +10,9 @@ function Image({
     return (
         <div className={`relative overflow-hidden ${className || ""}`}>
             <NextImage
-                src={src ? src : "/images/no-thumbnail.png"}
+                src={src || '/images/no-thumbnail.png'}
                 alt={alt}
-                fill
-                blurDataURL={src ? src : "/images/no-thumbnail.png"}
-                placeholder="empty"
+                fill={true}
                 className="object-cover w-full h-full"
                 priority
             />

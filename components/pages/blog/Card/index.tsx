@@ -19,12 +19,13 @@ const BlogCard = ({ body, slug }: BlogType): JSX.Element => {
                         </div>
                         <div className="w-full h-[200px]">
                             <Image
-                                src={image ? image : "/images/no-thumbnail.png"}
+                                src={image || "/images/no-thumbnail.png"}
                                 alt={title}
-                                height={400}
-                                width={400}
-                                blurDataURL={image ? image : "/images/no-thumbnail.png"}
+                                className="object-cover w-full h-full"
+                                fill={true}
+                                placeholder="blur"
                                 priority
+                                blurDataURL={image || "/images/no-thumbnail.png"}
                             />
                         </div>
                     </div>

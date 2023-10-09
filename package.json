@@ -16,6 +16,7 @@
     "@vercel/analytics": "^1.0.1",
     "axios": "^1.2.2",
     "date-fns": "^2.29.1",
+    "framer-motion": "^10.15.1",
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.4",
     "mongodb": "^4.13.0",

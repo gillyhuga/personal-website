@@ -17,9 +17,6 @@ Router.events.on('routeChangeError', () => NProgress.done());
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <ThemeProvider attribute="class" enableSystem={false} defaultTheme="light">
-      <div className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 h-60 blur-2xl opacity-30 -mt-40  absolute w-full top-0 z-10"></div>
-      <NavigationBar />
-      <div><Toaster/></div>
       <Component {...pageProps} />
       <Analytics />
     </ThemeProvider>

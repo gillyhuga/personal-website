@@ -1,15 +1,16 @@
 import React from 'react';
 import AdminLayout from '@/components/layout/AdminLayout';
+import { GetServerSideProps } from 'next';
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 function Profile() {
   return (
-    <AdminLayout>
-      <h1 className="text-2xl font-bold mb-4">Profile</h1>
-      <div className="bg-white p-6 rounded shadow-lg">
-        <p>Ini adalah konten dari halaman Dashboard.</p>
-      </div>
+    <AdminLayout title={"Profile"}>
+       <p>Ini adalah konten dari halaman Dashboard.</p>
     </AdminLayout>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = withPageAuthRequired();
 
 export default Profile;
